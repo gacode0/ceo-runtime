@@ -1,0 +1,15 @@
+﻿# Python (in case you revisit the Flask version)
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated artifacts
+static/*.ics
+static/*.png

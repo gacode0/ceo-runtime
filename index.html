@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEO Daily Runtime</title>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Header with live date & clock -->
+    <header class="header">
+      <div class="date-container">
+        <span id="currentDate" class="date-text">Monday, October 23, 2026</span>
+      </div>
+      <div class="clock-container">
+        <span id="liveClock" class="clock-text">00:00:00</span>
+      </div>
+    </header>
+
+    <!-- Right Now panel -->
+    <section class="right-now-panel">
+      <div class="right-now-label">RIGHT NOW</div>
+      <div id="currentTaskName" class="right-now-task">—</div>
+      <div id="currentTaskTime" class="right-now-time">—</div>
+    </section>
+
+    <!-- Add task form -->
+    <section class="add-task-card">
+      <h2 class="card-title">＋ Add time block</h2>
+      <form id="taskForm" class="task-form">
+        <div class="form-row">
+          <div class="input-group">
+            <label for="startTime">Start</label>
+            <input type="time" id="startTime" required value="08:00">
+          </div>
+          <div class="input-group">
+            <label for="endTime">End</label>
+            <input type="time" id="endTime" required value="09:00">
+          </div>
+        </div>
+        <div class="input-group full-width">
+          <label for="taskName">Task name</label>
+          <input type="text" id="taskName" placeholder="e.g., Deep Work" required maxlength="60">
+        </div>
+        <button type="submit" class="btn-add">Add block</button>
+      </form>
+      <div id="formError" class="error-message"></div>
+    </section>
+
+    <!-- Schedule list -->
+    <section class="schedule-card">
+      <div class="schedule-header">
+        <h2 class="card-title">📋 Daily schedule</h2>
+        <span id="taskCount" class="task-count">12 blocks</span>
+      </div>
+      <ul id="scheduleList" class="schedule-list">
+        <!-- JS populates dynamically -->
+      </ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
